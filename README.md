@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# TypeScript and React Workshop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to our TypeScript and React workshop!
 
-Currently, two official plugins are available:
+In this session, we will be diving into the world of React and TypeScript by working a dynamic spinning wheel app to elect the Daily Standup Meeting animator.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Project Overview
 
-## Expanding the ESLint configuration
+The spinning wheel app is a list of names displayed on a wheel. When the wheel is spun, it randomly selects a name. The selected name is then removed from the wheel and displayed in a separate list, where it is marked as selected. 📝
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project is already partially built using React and TypeScript. We will be focusing on enhancing it by adding a dynamic list of names. This list will be interactive - you can select a name, which will then be checked off and removed from the wheel.
 
-- Configure the top-level `parserOptions` property like this:
+## 🏁 Workshop Goals
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+By the end of this workshop, you will:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Understand the basics of React, including components, props, and state.
+- Understand how to use TypeScript in a React application, including adding types to props and state.
+- Be able to handle events in React, such as clicking a button or checking a box.
+- Have hands-on experience modifying a React application.
