@@ -30,10 +30,36 @@ const Wheel: FC<WheelProps> = ({ names }) => {
     };
 
     const spin = () => {
+        // Reset the selected name when the wheel is spun
         setSelectedName("");
-        const newRotation = rotation + Math.floor(Math.random() * 360) + 720; // Add 720 to ensure at least two full spins
+
+        // Generate a random angle between 0 and 360 degrees
+        const randomAngle = Math.floor(Math.random() * 360);
+
+        // Add 720 degrees to ensure at least two full spins
+        const fullSpins = 720;
+
+        // Calculate the new rotation angle by adding the current rotation, the random angle, and the full spins
+        const newRotation = rotation + randomAngle + fullSpins; // newRotation = 0 + 180 + 720 = 900
         setRotation(newRotation);
-        const selectedSegment = Math.floor(((360 - (newRotation % 360)) + 90) / segmentAngle) % numberOfSegments;
+
+        // Calculate the rotation angle relative to a full rotation
+        const rotationAngle = newRotation % 360; // rotationAngle = 900 % 360 = 180
+
+        // Calculate the remaining angle to complete a full rotation
+        const remainingAngleToCompleteRotation = 360 - rotationAngle; // remainingAngleToCompleteRotation = 360 - 180 = 180
+
+        // Add 90 degrees to the remaining angle to offset the starting point
+        const offsetAngle = remainingAngleToCompleteRotation + 90; // offsetAngle = 180 + 90 = 270
+
+        // Determine the raw index of the segment by dividing the offset angle by the angle of each segment
+        const rawSegmentIndex = offsetAngle / segmentAngle; // rawSegmentIndex = 270 / 60 = 4.5
+
+        // Round down the raw segment index to get an integer
+        const flooredSegmentIndex = Math.floor(rawSegmentIndex); // flooredSegmentIndex = Math.floor(4.5) = 4
+
+        // Use modulo operation with the number of segments to ensure the selected segment index is within the valid range
+        const selectedSegment = flooredSegmentIndex % numberOfSegments; // selectedSegment = 4 % 6 = 4
 
         // Delay setting the selected name until the spin animation has finished
         setTimeout(() => {
