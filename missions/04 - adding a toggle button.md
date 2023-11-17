@@ -1,4 +1,4 @@
-# Adding a toggle button (Bonus)
+## Adding a toggle button (Bonus)
 
 ## Instructions
 
