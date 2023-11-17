@@ -9,6 +9,7 @@ const Wheel: FC<WheelProps> = ({ names }) => {
     const [rotation, setRotation] = useState(0);
     const numberOfSegments = names.length;
     const segmentAngle = 360 / numberOfSegments;
+    const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#00bcd4', '#009688', '#4caf50', '#ffeb3b', '#ff9800']
 
     const calculatePath = (index: number, segmentAngle: number) => {
         const startAngle = index * segmentAngle;
@@ -39,8 +40,6 @@ const Wheel: FC<WheelProps> = ({ names }) => {
             setSelectedName(names[selectedSegment]);
         }, 3000);
     };
-
-    const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#00bcd4', '#009688', '#4caf50', '#ffeb3b', '#ff9800']
 
     return (
         <>
