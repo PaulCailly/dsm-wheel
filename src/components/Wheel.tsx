@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 
-interface WheelProps {
+type WheelProps = {
     names: string[];
 }
 
-const Wheel: React.FC<WheelProps> = ({ names }) => {
+const Wheel: FC<WheelProps> = ({ names }) => {
     const [selectedName, setSelectedName] = useState<string | null>(null);
     const [rotation, setRotation] = useState(0);
     const numberOfSegments = names.length;
