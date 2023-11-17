@@ -26,11 +26,13 @@ function App() {
     "sretel",
     "tmanachem",
   ]);
-  const [showWheel, setShowWheel] = useState(true);
+  const [selectedNames, setSelectedNames] = useState<string[]>([])
+  const [showWheel, setShowWheel] = useState<boolean>(true);
 
   const handleNameSelected = (name: string) => {
     setNames(names.filter((n) => n !== name));
-  };
+    setSelectedNames([...selectedNames, name])
+  }
 
   return (
     <div>
@@ -40,7 +42,7 @@ function App() {
       {showWheel ? (
         <Wheel names={names} />
       ) : (
-        <NameList names={names} onNameSelected={handleNameSelected} />
+        <NameList names={names} selectedNames={selectedNames} onNameSelected={handleNameSelected} />
       )}
     </div>
   );
