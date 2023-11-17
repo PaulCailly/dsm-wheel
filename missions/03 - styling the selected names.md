@@ -38,4 +38,6 @@ const NameList: FC<NameListProps> = ({ names, onNameSelected }) => {
 
 </details>
 
+## [< Previous mission](./02%20-%20adding%20state%20to%20App%20component.md)
+
 ## [Next mission >](./04%20-%20adding%20a%20toggle%20button.md)

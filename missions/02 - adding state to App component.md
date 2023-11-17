@@ -40,4 +40,6 @@ function App() {
 
 </details>
 
+## [< Previous mission](./01%20-%20create%20the%20NameList%20component.md)
+
 ## [Next mission >](./03%20-%20styling%20the%20selected%20names.md)

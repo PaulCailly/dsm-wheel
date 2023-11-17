@@ -31,4 +31,6 @@ const NameList: FC<NameListProps> = ({ names, onNameSelected }) => {
 
 </details>
 
+## [< Introduction](../README.md)
+
 ## [Next mission >](./02%20-%20adding%20state%20to%20App%20component.md)
