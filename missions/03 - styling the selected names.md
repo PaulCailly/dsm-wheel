@@ -8,26 +8,51 @@
 <details>
 <summary>Solution</summary>
 
+in App.tsx
+
 ```jsx
-const NameList: FC<NameListProps> = ({ names, onNameSelected }) => {
-    const [selectedNames, setSelectedNames] = useState<string[]>([]);
+  const [selectedNames, setSelectedNames] = useState<string[]>([])
 
-    const handleNameSelected = (name: string) => {
-        setSelectedNames([...selectedNames, name]);
-        onNameSelected(name);
-    }
+  const handleNameSelected = (name: string) => {
+    setNames(names.filter(n => n !== name))
+    setSelectedNames([...selectedNames, name])
+  }
+```
 
-    return (
-        <ul>
-            {names.map(name => (
-                <li key={name} className={selectedNames.includes(name) ? 'selected' : ''}>
-                    <input type="checkbox" onChange={() => handleNameSelected(name)} />
-                    {name}
-                </li>
-            ))}
-        </ul>
-    );
-}
+in NameList.tsx
+
+```jsx
+import { FC } from "react";
+
+type NameListProps = {
+  names: string[],
+  selectedNames: string[],
+  onNameSelected: (name: string) => void,
+};
+
+const NameList: FC<NameListProps> = ({
+  names,
+  selectedNames,
+  onNameSelected,
+}) => {
+  return (
+    <ul>
+      {names.map((name) => {
+        return (
+          <li
+            key={name}
+            className={selectedNames.includes(name) ? "selected" : ""}
+          >
+            <input type="checkbox" onChange={() => onNameSelected(name)} />
+            {name}
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+export default NameList;
 ```
 
 ```css
